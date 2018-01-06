@@ -39,7 +39,7 @@ can do it for you:
 
 ```shell
 function at () {
-  echo "$(eval echo "\${${1}_${2}}")"
+  echo "$(eval echo "\${${1}_${2}${3}}")"
 }
 ```
 
