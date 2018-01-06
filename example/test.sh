@@ -4,10 +4,7 @@ alias json="$(dirname $0)/../bin/json"
 jsonFile="$(dirname $0)/test.json"
 
 function at () {
-  name="$1"
-  index="$2"
-
-  echo "$(eval echo "\${${name}_${index}}")"
+  echo "$(eval echo "\${${1}_${2}}")"
 }
 
 ## without root prefix
