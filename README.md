@@ -2,11 +2,7 @@
 
 Parse JSON objects from shell scripts.
 
-## Installation
-
-```shell
-sudo curl https://raw.githubusercontent.com/karimsa/json/master/bin/json > /usr/local/bin/json
-```
+**Install**: `go get -u github.com/karimsa/json`
 
 ## Usage
 
