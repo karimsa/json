@@ -123,12 +123,25 @@ func exportMaybeObject(data interface{}, prefix string) (output string) {
 }
 
 func main() {
+	rootPrefix := ""
+
+	if len(os.Args) == 2 {
+		rootPrefix = os.Args[1]
+	}
+	
+	if strings.Contains(rootPrefix, "-")|| len(os.Args) > 2 {
+		fmt.Println("usage: json [prefix] < file")
+		fmt.Println("Or: cat file | json [prefix]")
+		fmt.Println("Or whatever. Just pipe me stuff.")
+		return
+	}
+
 	buffer, err := ioutil.ReadAll(os.Stdin)
 	check(err)
 
 	var data map[string]interface{}
 	json.Unmarshal(buffer, &data)
 
-	output := exportMaybeArray(data, "")
+	output := exportMaybeArray(data, rootPrefix)
 	fmt.Println(output)
 }
