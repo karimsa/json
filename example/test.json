@@ -1,0 +1,31 @@
+{
+  "_id": "5a4ffe37442b61094649408e",
+  "index": 0,
+  "guid": "4d09285f-dd7b-4c92-af6b-dacfd8daa9c5",
+  "isActive": true,
+  "balance": "$2,906.29",
+  "picture": "http://placehold.it/32x32",
+  "age": 30,
+  "eyeColor": "green",
+  "name": "Juliana Gordon",
+  "gender": "female",
+  "company": "ZILENCIO",
+  "email": "julianagordon@zilencio.com",
+  "phone": "+1 (811) 456-3993",
+  "address": "303 Box Street, Teasdale, North Carolina, 1778",
+  "about": "Nisi cupidatat incididunt et duis ullamco dolore ullamco mollit duis anim cupidatat deserunt. Consectetur nisi duis ut nostrud amet. In eu consequat ut mollit qui reprehenderit. Cupidatat id Lorem magna aliquip esse culpa velit proident.\r\n",
+  "registered": "2016-10-19T12:53:45 +04:00",
+  "latitude": 3.063938,
+  "longitude": 148.628931,
+  "tags": [
+    "sit",
+    "officia",
+    "velit",
+    "do",
+    "dolor",
+    "ut",
+    "est"
+  ],
+  "greeting": "Hello, Juliana Gordon! You have 3 unread messages.",
+  "favoriteFruit": "banana"
+}
