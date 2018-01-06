@@ -1,21 +1,21 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"log"
+	"encoding/json"
 	"errors"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
 	"strconv"
 	"strings"
-	"io/ioutil"
-	"encoding/json"
 )
 
 const debugEnabled = false
 
-func debug(format string, args ... interface{}) {
+func debug(format string, args ...interface{}) {
 	if debugEnabled {
-		fmt.Fprintf(os.Stderr, "debug: " + format + "\n", args...)
+		fmt.Fprintf(os.Stderr, "debug: "+format+"\n", args...)
 	}
 }
 
@@ -46,7 +46,7 @@ func prefixed(prefix string, key string) string {
 	if prefix == "" {
 		return key
 	}
-	
+
 	return prefix + "_" + key
 }
 
@@ -63,7 +63,7 @@ func exportMaybeArray(data interface{}, prefix string) (output string) {
 	}
 
 	debug("parsing value at %s as array", prefix)
-	output += define(prefix + "_length", strconv.Itoa(len(dat)))
+	output += define(prefix+"_length", strconv.Itoa(len(dat)))
 
 	for index, value := range dat {
 		key := prefixed(prefix, strconv.Itoa(index))
@@ -87,7 +87,7 @@ func exportMaybePrimitive(data interface{}, prefix string) (string, bool) {
 			return define(prefix, strconv.FormatFloat(val, 'f', 0, 64)), true
 		}
 		return define(prefix, strconv.FormatFloat(val, 'f', 15, 64)), true
-	
+
 	case bool:
 		debug("parsing value at %s as bool", prefix)
 		return define(prefix, boolAsStr(val)), true
